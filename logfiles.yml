@@ -1,0 +1,10 @@
+---
+- name: Collect log files from controlNode
+  hosts: control_node
+  tasks:
+    - name: Collecting Log Files from controlNode
+      fetch:
+        src: /var/log/syslog
+        dest: /home/amadeoubuntu/CPE243_HoA7p1/logfiles.json
+        flat: yes
+      register: syslog_result
